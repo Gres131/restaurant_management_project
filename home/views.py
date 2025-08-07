@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.conf import settings
+from django.conf import RestaurantInfo
 
 def homepage(request):
     restaurant = RestaurantInfo.objects.first()
