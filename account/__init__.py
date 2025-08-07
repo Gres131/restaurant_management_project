@@ -15,7 +15,7 @@ class Note(models.Model):
 
 
 class NoteSerializer(serializers.ModelSerializer):
-    class Mete:
+    class Meta:
         model = Note
         fields = '__all__'
         read_only_fields = ['owner']
@@ -23,7 +23,7 @@ class NoteSerializer(serializers.ModelSerializer):
 
 class NoteViewSet(viewsets.ModelViewSet):
     serializer_class = NoteSerializer
-    permission_classes =[Is IsAuthenticated]
+    permission_classes =[IsAuthenticated]
 
     def get_queryset(self):
         return Note.objects.filter(owner=self.request.user)
@@ -32,7 +32,7 @@ class NoteViewSet(viewsets.ModelViewSet):
         serialize.save(owner=self.request.user)
 
 @receiver(post_save, sender=User)
-def create_auth_token(sender, instance=None, created=False, **kwargs):
+def create_user_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         token.objects.create(user=instance)
     
