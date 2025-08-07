@@ -3,7 +3,5 @@ from django.conf import settings
 
 def homepage(request):
     restaurant_name = settings.RESTAURANT_NAME
-    return render(request, 'home/homepage.html', {'restaurant_name': restaurant_name})
-
-def custom_404_view(request, exception):
-    return render(request, '404.html', status=404)
+    restaurant_phone = settings.RESTAURANT_PHONE
+    return render(request, 'home/homepage.html', {'restaurant_name': restaurant_name,'restaurant_phone': restaurant_phone})
