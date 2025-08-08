@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <title> {{ restaurant_name }} </title>
     <link rel="stylesheet" href="{% static 'css/home.css'%}">
-
 </head>
+
 <body>
 
         <!-- Header Section -->
         <header class="site-header">
 
-            <!-- Optional logo -->
-        <h1> Welcome to {{ restaurant_name } </h1>
+        <!-- Optional logo -->
+        <h1> Welcome to {{ restaurant_name }} </h1>
         </header>
 
         <!-- ===== Main Content Section ===== -->
         <main class="site-main">
+
             <p>Experience the best food in town with fresh ingredients and great ambiance.</p>
             <a href="{% url 'menu_list' %}" class="btn">view Menu</a>
         </main>
 
-
         <!-- ==== Footer Section ==== -->
-        <footer class="site-footer">
-            &copy; {{now|date:"Y"}} {{ restaurant_name }}. All Rights Reserved.
-        </footer>
-
+        <footer class="site-footer">&copy; {{now|date:"Y"}} {{ restaurant_name }}. All Rights Reserved.</footer>
 </body>
 </html>
