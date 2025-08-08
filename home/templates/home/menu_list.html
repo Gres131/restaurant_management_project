@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Menu</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 20px;">
+    <h1 style="text-align: center; color:#ff6347;">Our Menu</h1>
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); "
+        {% for itrm in menu_items %}
+            <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                <h2 style="margin: 0; color:#333;">{{ item.name }} - <span style="color: #ff6347">{{ item.price }}</span></h2>
+                <p style="margin: 5px 0; color: #555;">{{ item.description }}</p>
+            </div>
+        {% empty %}
+            <p style="text-align: center;"
