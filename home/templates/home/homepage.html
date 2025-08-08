@@ -2,27 +2,27 @@
 <html>
     <head>
         <title> {{ restaurant_name }} </title>
+        <link rel="stylesheet" href="{% static 'css/home.css'%}">
     </head>
 
-    <body style="margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; text-align: center;">
+    <body>
         
-        <header style="background-color: #ff7043; padding: 20px">
-        <h1 style="margin: 0; color: white; font-size: 3rem;">
+        <header class="site-header">
+        <h1>
             Welcome to {{ restaurant_name }}
         </h1>
         </header>
 
-        <main style="padding: 30px;">
-            <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
+        <main class="site-main">
+            <p>
                 Experience the best food in town with fresh ingredients and great ambiance.
             </p>
-            <a href="{% url 'menu_list' %}" 
-                style="display: inline-block; margin-top: 20px; padding: 12px 25px; background-color: #ff7043; color: white; text-decoration: none; font-size: 1.1rem; border-radius: 5px;">
+            <a href="{% url 'menu_list' %}" class="btn">
                 view Menu
             </a>
         </main>
 
-        <footer style="background-color: #333; padding: 15px; color: white; position: fixed; bottom: 0; width: 100%;">
+        <footer class="site-footer">
             &copy; {{ now|date:"Y" }} {{ restaurant_name }}. All Rights Reserved.
         </footer>
     </body>
