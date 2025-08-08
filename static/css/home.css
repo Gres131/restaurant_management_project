@@ -6,22 +6,22 @@ body {
     text-align: center;
 }
 
-.site-header {
+.restaurant-header {
     background-color: #ff7043;
     padding: 20px;
 }
 
-.site-header h1 {
+.restaurant-header h1 {
     margin: 0;
     color: white;
     font-size: 3rem;
 }
 
-.site-main {
+.restaurant-main {
     padding: 30px;
 }
 
-.site-main p {
+.restaurant-main p {
     font-size: 1.2rem;
     max-width: 600px;
     margin: auto;
@@ -42,7 +42,7 @@ body {
     background-color: #e95f32;
 }
 
-.site-footer {
+.restaurant-footer {
     background-color: #333;
     padding: 15px;
     color: white;
