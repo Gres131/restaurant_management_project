@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+.site-header {
+    background-color: #ff7043;
+    padding: 20px;
+}
+
+.site-header h1 {
+    margin: 0;
+    color: white;
+    font-size: 3rem;
+}
+
+.site-main {
+    padding: 30px;
+}
+
+.site-main p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top:  20px;
+    padding: 12px 25px;
+    background-color: #ff7043;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #e95f32;
+}
+
+.site-footer {
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
