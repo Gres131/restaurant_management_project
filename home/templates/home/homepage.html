@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> {{ restaurant_name }} </title>
-        <link rel="stylesheet" href="{% static 'css/home.css'%}">
-    </head>
+<html lang="en">
+<head>
 
-    <body>
-        
+    <meta charset="UTF-8">
+    <title> {{ restaurant_name }} </title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+
+</head>
+<body>
+        <!-- Header Section -->
         <header class="site-header">
+
+        <!-- Optional logo -->
+        <!-- <img src="{% static 'images/logo.png' %}" alt="{{ restaurant_name }} Logo" class="restaurant-logo"> -->
         <h1>
             Welcome to {{ restaurant_name }}
         </h1>
         </header>
 
+        <!-- ===== Main Content Section ===== -->
         <main class="site-main">
             <p>
                 Experience the best food in town with fresh ingredients and great ambiance.
@@ -22,6 +28,7 @@
             </a>
         </main>
 
+        <!-- ==== Footer Section ==== -->
         <footer class="site-footer">
             &copy; {{ now|date:"Y" }} {{ restaurant_name }}. All Rights Reserved.
         </footer>
