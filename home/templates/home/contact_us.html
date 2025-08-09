@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - {{restaurant_name|default:"Our Restaurant"}}</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1> Contact Us</h1>
+        <p><span class="highlight">Address:</span> 123 Main Street, Your City, India</p>
+        <p><span class="highlight">Phone:</span> +91 9876543210</p>
+        <p><span class="highlight">Email:</span> info@restaurant.com</p>
+        <p>We would love to hear from you! Feel free to call, email, or visit us during our working hours.</p>
+    </div>
+</body>
+</html>
+
