@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.conf import settings
 
 def homepage(request):
-    restaurant_name = settings.RESTAURANT_NAME
-    return render(request, 'home/homepage.html', {'restaurant_name': restaurant_name})
+    context = {
+    "restaurant_name": settings.RESTAURANT_NAME
+    }
+    return render(request, 'home/homepage.html', context)
 
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
