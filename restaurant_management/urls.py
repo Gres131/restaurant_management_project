@@ -20,7 +20,6 @@ from home.view import homepage, menu_list
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
-    path("", include("home.urls")),
     path('', homepage, name='homepage'),
     path('menu/', menu_list, name='menu_list'),
 
