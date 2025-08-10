@@ -3,13 +3,38 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>404 - Page Not Found</title>
+        <style>
+            body {
+                font-family: Arial, sans-sarif;
+                background-color: #f8f8f8;
+                text-align: center;
+                padding: 50px; 
+            }
+            h1 {
+                font-size: 50px;
+                color: #ff4c4c;
+            }
+            p {
+                font-size: 18px;
+                color: #555;
+            }
+            a {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #ff4c4c;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            a:hover {
+                background-color: #e63e3e;
+            }
+        </style>    
     </head>
-    <body style="fort-family: Arial, sans-serif; background-color: #f5f5f5; padding: 40px; text-align: center;">
-        <h1 style="color: #333;">Welcome to {{restaurant_name}}</h1>
-        <p style="font-size: 20px; color: #666;">Enjoy tasty dishes and friendly service!</p>
-
-        <p style="margin-top: 30px; fort-size: 18px; color: #444;">
-            <strong>Contact us:</strong>{{restaurant_phone}}
-        </p>
+    <body>
+        <h1>404</h1>
+        <p>Oops! The page you are looking for does not exist.</p>
+        <a href="/">Go Back Home</a>
     </body>
 </html>
