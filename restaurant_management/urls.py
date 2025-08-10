@@ -20,6 +20,7 @@ from home.view import homepage, menu_list
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
+    path('admin/', admin.site.urls),
     path('', homepage, name='homepage'),
     path('menu/', menu_list, name='menu_list'),
 
@@ -28,4 +29,5 @@ urlpatterns = [
     path('api/accounts/',include('account.urls')),
     path('api/products/',include('products.urls')),
     path('api/orders/',include('orders.urls')),
+    path('', include('home.urls')),
 ]
