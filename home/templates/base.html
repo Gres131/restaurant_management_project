@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ restaurant_name }}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+    {% block content %}{% endblock %}
+
+
+    <footer class="restaurant-footer">
+        &copy; {% now "y" %} {{restaurant_name}}. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
