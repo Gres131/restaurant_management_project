@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{restaurant_name}}</title>
-    <link rel="stylesheet" href="{% static 'css/home.css'%}">
-</head>
-<body>
-        <!-- Header Section -->
-        <header class="restaurant-header">
+<html>
+    <head>
+        <title> {{ restaurant_name }} -Home </title>
+    </head>
 
-        <!-- Optional logo -->
-        <h1>Welcome to {{restaurant_name}}</h1>
-        </header>
+    <body style="fort-family: Arial, sans-serif; background-color: #f5f5f5; padding: 40px; text-align: center;">
+        <h1 style="color: #333;">Welcome to {{ restaurant_name }}</h1>
+        <p style="fort-size: 20px; color: #666;">Enjoy tasty dishes and friendly service!</p>
 
-        <!-- ===== Main Content Section ===== -->
-        <main class="restaurant-main">
 
-            <p>Experience the best food in town with fresh ingredients and great ambiance.</p>
-            <a href="{% url 'menu_list' %}" class="btn">view Menu</a>
-        </main>
-
-        <!-- ==== Footer Section ==== -->
-        <footer class="restaurant-footer">&copy; {{now|date:"Y"}} {{ restaurant_name }}. All Rights Reserved.</footer>
-</body>
+        <p style="margin-top: 30px; fort-size: 18px; color: #444;">
+            <strong>Contant us:</strong>{{restaurant_phone}}
+        </p>
+    </body>
 </html>
