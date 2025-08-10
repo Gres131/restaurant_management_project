@@ -53,3 +53,16 @@ body {
     bottom:0;
     width:100%;
 }
+
+.restaurant-logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.restaurant-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
