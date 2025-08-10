@@ -1,3 +1,4 @@
+/* General Page Styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -6,6 +7,8 @@ body {
     text-align: center;
 }
 
+
+/* Header styling */
 .restaurant-header {
     background-color: #ff7043;
     padding: 20px;
@@ -17,6 +20,8 @@ body {
     font-size: 3rem;
 }
 
+
+/* Main Content Styling */
 .restaurant-main {
     padding: 30px;
 }
@@ -42,6 +47,8 @@ body {
     background-color: #e95f32;
 }
 
+
+/* footer styling */
 .restaurant-footer {
     text-align: center;
     background-color:#333;
@@ -53,7 +60,7 @@ body {
     bottom:0;
     width:100%;
 }
-
+/* Logo Styling */
 .restaurant-logo {
     max-width: 200px;
     height: auto;
