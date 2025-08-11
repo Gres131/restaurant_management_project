@@ -13,7 +13,34 @@
         <p><span class="highlight">Phone:</span> +91 9876543210</p>
         <p><span class="highlight">Email:</span> info@restaurant.com</p>
         <p>We would love to hear from you! Feel free to call, email, or visit us during our working hours.</p>
+
+        <!--Contact Form-->
+        <form id="contactForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email"><br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+
+            <button type="submit">Send</button>
+        </form>
     </div>
+
+    <!--Simple Client-Side Validation -->
+    <script>
+        document.getElementById("contactForm"). addEventListener("submit", function(event){
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+
+            if (name === "" ||email === "") {
+                alert("Please fill in both your Name and Email.");
+                event.preventDefault();
+            }
+        });
+    </script
 </body>
 </html>
 
