@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Leave Feedback</title>
+    </head>
+    <body style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
+        <h1>Leave Your Feedback</h1>
+
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: green;">{{ message }}</p>
+            {% endfor %}
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit"
+                        style="padding: 10px 15px; background-color: #27ae60; color: white; border: none; border-radius: 5px; cursor:pointer;">
+                    submit Feedback
+                </button>
+            </form>
+    </body>
+</html>
