@@ -39,6 +39,10 @@
                 alert("Please fill in both your Name and Email.");
                 event.preventDefault();
             }
+            else if(!emailPattern.test(email)){
+                alert("please enter a valid email address.");
+                event.preventDefault();    
+            }
         });
     </script
 </body>
