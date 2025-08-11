@@ -11,9 +11,9 @@
     <!--Footer Section-->
     <footer class="restaurant-footer">
         <!--Display current year dynamically and restaurant name -->
-        &copy; {% now "Y" %} {{restaurant_name}}. All Rights Reserved.
-        <br> 
-        Opening Hours: Mon-Fri: 11am - 9pm | Sat-Sun: 10am -10pm
+        &copy; {% now "Y" %} {{restaurant_name}}. All Rights Reserved. <br>
+        
+        <span>Opening Hours: {{ opening_hours }}</span>
     </footer>
 
 </body>
