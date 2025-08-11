@@ -49,9 +49,9 @@ body {
     margin-top: 30px;
     font-size: 0.9em;
     color:white;
-    position:fixed;
     bottom:0;
     width:100%;
+    position: fixed;
 }
 
 .reservations-container {
