@@ -1,23 +1,49 @@
 <html>
     <head>
         <title>Leave Feedback</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: auto;
+            }
+            .success {
+                color: green;
+                margin-bottom: 10px;
+            }
+            textarea {
+                width: 100%;
+                paddind: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                resize: vertical;
+            }
+            button {
+                paddind: 10px 15px;
+                background-color: #27ae60;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                corsor: pointer; 
+            }
+            button:hover {
+                background-color: #1e8449
+            }
+        </style>
     </head>
-    <body style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
+    <body>
         <h1>Leave Your Feedback</h1>
 
 
         {% if messages %}
             {% for message in messages %}
-                <p style="color: green;">{{ message }}</p>
+                <p class="success">{{ message }}</p>
             {% endfor %}
 
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit"
-                        style="padding: 10px 15px; background-color: #27ae60; color: white; border: none; border-radius: 5px; cursor:pointer;">
-                    submit Feedback
-                </button>
+                <button type="submit">submit Feedback</button>
             </form>
     </body>
 </html>
