@@ -15,9 +15,11 @@ def homepage(request):
 
     restaurant_name = restaurant.name if restaurant else settings.RESTAURANT_NAME
     restaurant_phone = restaurant.phone if restaurant else settings.RESTAURANT_PHONE
-
     
-    return render(request, 'home/homepage.html', {
+     context = {
         'restaurant_name': restaurant_name,
         'restaurant_phone': restaurant_phone
-        })
+     }
+    
+    return render(request, 'home/homepage.html', context)
+   
