@@ -1,4 +1,3 @@
-/* General Page Styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,8 +6,6 @@ body {
     text-align: center;
 }
 
-
-/* Header styling */
 .restaurant-header {
     background-color: #ff7043;
     padding: 20px;
@@ -20,8 +17,6 @@ body {
     font-size: 3rem;
 }
 
-
-/* Main Content Styling */
 .restaurant-main {
     padding: 30px;
 }
@@ -47,8 +42,6 @@ body {
     background-color: #e95f32;
 }
 
-
-/* footer styling */
 .restaurant-footer {
     text-align: center;
     background-color:#333;
@@ -60,16 +53,18 @@ body {
     bottom:0;
     width:100%;
 }
-/* Logo Styling */
-.restaurant-logo {
-    max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px auto;
+
+.reservations-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f8f8;
 }
 
-.restaurant-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f8f8;
+.reservations-container h1 {
+    color:#333;
+}
+
+.reservations-container p {
+    color: #666;
+    font-size: 18px;
 }
