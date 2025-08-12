@@ -12,7 +12,7 @@ class order(models.Model):
         ('CANCELLED', 'Cancelled'),
     ]
 
-    CUSTOMER = MODELS.fOREIGNkEY(
+    CUSTOMER = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="orders",
@@ -22,7 +22,7 @@ class order(models.Model):
 
     order_items = models.ManyToManyField(
         Menu,
-        related_name="orders",
+        related_name="order_list",
         verbose_name="Order Items",
         help_text="Menu items included in this order"
     )
@@ -48,6 +48,9 @@ class order(models.Model):
         verbose_name="Updated At",
         help_text="When the order was last updated"
     )
+
+    class Meta:
+        ordering =['-created_at']
     
     def __str__(self):
         return f"Order #{self.id} - {self.customer} - {self.status}"
