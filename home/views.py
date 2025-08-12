@@ -16,9 +16,3 @@ def contact_us(request):
 
 def reservations(request):
     return render(request, 'home/reservations.html')
-
-def get_footer_context():
-    return {
-        "restaurant_name": getattr(settings, "RESTAURANT_NAME", "Default Restaurant"),
-        "current_year": now().year
-    }
