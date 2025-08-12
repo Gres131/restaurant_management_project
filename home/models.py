@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class RestaurantInfo(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
+    address = models.CharField(max_length=225, blank=True)
 
 
     def __str__(self):
@@ -14,6 +15,7 @@ class RestaurantInfo(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15, blank=True)
+    bio =models.TextField(blank=True)
 
 
     def  __str__(self):
