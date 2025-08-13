@@ -32,12 +32,17 @@ def homepage(request):
     api_url = "http://localhost:8000/api/menu/"
     try:
         response =requests.get(api_url, timeout=5)
+        if response.status_code ==  200:
+            menu_items = response.json()
+    except requests.exceptions.RequestEception as e:
+        logger.error(f"Error fetching menu data: {e}")
         
     
      context = {
         "restaurant_name": restaurant_display_name,
         "restaurant_phone": restaurant_display_phone,
-        "opening_hours": opening_hours     
+        "opening_hours": opening_hours,
+        "menu_items": menu_items     
     }
     
     return render(request, 'home/homepage.html', context)
