@@ -45,6 +45,12 @@ class order(models.Model):
 
     created_at = models.DateTimeField(
         auto_now_add=True,
+        verbose_name="Created At",
+        help_text="When the order was last updated"
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True,
         verbose_name="Updated At",
         help_text="When the order was last updated"
     )
