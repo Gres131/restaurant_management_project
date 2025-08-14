@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator
 from products.models import Menu
 
 # Create your models here.
-class order(models.Model):
+class Order(models.Model):
     STATUS_CHOICES = [
         ('PENDING', 'Pending'),
         ('PROCESSING', 'Processing'),
@@ -12,7 +12,7 @@ class order(models.Model):
         ('CANCELLED', 'Cancelled'),
     ]
 
-    CUSTOMER = models.ForeignKey(
+    customer = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="orders",
