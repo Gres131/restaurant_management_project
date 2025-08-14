@@ -2,9 +2,10 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.decorators import api_view
 
 from .models import Item
-from .serializers import ItemSerializer
+from .serializers import ItemSerialize
 
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
