@@ -1,5 +1,7 @@
 from django import forms
 from .models import Feedback
+from .models import contact
+
 
 class FeedbackForm(forms.ModelForm):
     class Meta:
@@ -12,3 +14,8 @@ class FeedbackForm(forms.ModelForm):
                 'style': 'width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;'
             })
         }
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['name', 'email']
