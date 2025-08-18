@@ -7,10 +7,8 @@ import requests
 logger = logging.getLogger(__name__)
 
 def homepage(request):
-
-
-    default_restaurant_name = getattr(settings, 'RESTAURANT_NAME', 'Our Restaurant')
-    default_restaurant_phone = getattr(settings, 'RESTAURANT_PHONE', '000-000-0000')
+    restaurant_display_name = getattr(settings, 'RESTAURANT_NAME', 'Our Restaurant')
+    restaurant_display_phone = getattr(settings, 'RESTAURANT_PHONE', '000-000-0000')
 
 
     opening_hours = "Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm"
