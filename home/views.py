@@ -4,6 +4,7 @@ from .models  import RestaurantInfo
 import logging 
 import requests
 
+
 logger = logging.getLogger(__name__)
 
 def homepage(request):
