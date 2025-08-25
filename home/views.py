@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
 from .models  import RestaurantInfo
+from .models import RestaurantLocation
 import logging 
 import requests
 
@@ -33,4 +34,8 @@ def homepage(request):
     }
     
     return render(request, 'home/homepage.html', context)
-   
+
+
+ def restaurant_locations(request):
+    location = RestaurantLocation.objects.all()
+      
