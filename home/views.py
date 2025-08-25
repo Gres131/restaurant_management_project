@@ -38,4 +38,5 @@ def homepage(request):
 
  def restaurant_locations(request):
     location = RestaurantLocation.objects.all()
+    return render(request, "home/restaurant_locations.html", {"locations": location})
       
