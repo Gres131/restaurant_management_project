@@ -14,7 +14,7 @@ path('menu/', views.menu_list, name='menu_list'),
 path('contact/', views.contact_us, name='contact_us'), 
 path("", views.homepage, name = "homepage"), 
 path('reservations/', views.reservations, name='reservations'),
-path('feedback/', views.feedback, name='feedback'),
+path('feedback/', views.feedback, name='feedback')
 path('api/menu/', menu_view, name='menu_api'),
 path("locations/", views.restaurant_locations, name="restaurant_locations"),
 ]
