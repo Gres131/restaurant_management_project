@@ -23,4 +23,7 @@ urlpatterns = [
     path('api/accounts/',include('account.urls')),
     path('api/products/',include('products.urls')),
     path('api/orders/',include('orders.urls')),
+    path("", include("home.urls")),
 ]
+
+if settings += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
