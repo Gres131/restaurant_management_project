@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .models  import RestaurantInfo, RestaurantLocation
+from .models  import RestaurantInfo, RestaurantLocation, MenuItem
 from .forms import ContactForm
-from .models import MenuItem
 import logging, requests
 
 
@@ -17,6 +16,7 @@ def homepage(request):
 
 
     menu_items = []
+    menu_items = MenuItem.objects.all()
     api_url = "http://localhost:8000/api/menu/"
     try:
         response =requests.get(api_url, timeout=5)
