@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.conf import settings
 from .models  import RestaurantInfo
 from .models import RestaurantLocation
+from .forms import Contactform
 import logging 
 import requests
 
