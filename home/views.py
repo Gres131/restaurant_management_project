@@ -1,10 +1,8 @@
 from django.shortcuts import render
 from django.conf import settings
-from .models  import RestaurantInfo
-from .models import RestaurantLocation
-from .forms import Contactform
-import logging 
-import requests
+from .models  import RestaurantInfo, RestaurantLocation
+from .forms import ContactForm
+import logging, requests
 
 
 logger = logging.getLogger(__name__)
@@ -31,7 +29,7 @@ def homepage(request):
         "restaurant_name": restaurant_display_name,
         "restaurant_phone": restaurant_display_phone,
         "opening_hours": opening_hours,
-        "menu_items": menu_items     
+        "menu_items": menu_items,     
     }
     
     return render(request, 'home/homepage.html', context)
@@ -41,3 +39,12 @@ def homepage(request):
     location = RestaurantLocation.objects.all()
     return render(request, "home/restaurant_locations.html", {"locations": location})
       
+def contact_us (request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            returnredirect("contact_us")
+    else:
+        form = ContactForm()
+        return render(request, "home/contact_us.html", {"form":form})
