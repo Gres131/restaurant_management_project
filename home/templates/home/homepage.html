@@ -12,7 +12,16 @@
         <p style="margin-top: 30px; fort-size: 18px; color: #444;">
             <strong>Contant us:</strong>{{restaurant_phone}}
         </p>
-
+        <!--Address Section-->
+        {% if restaurant_location %}
+            <div style="margin-top: 20px; font-size: 16px; color: #444;">
+                <strong>Visit Us At:</strong><br>
+                {{ restaurant_location.address }}<br>
+                {{ restaurant_location.city }}, {{ restaurant_location.state }} - {{ restaurant_location.zip_code }}
+            </div>
+        {% else %}
+            <p style="margin-top: 20px; font-size: 16px; color: #777;"><em>Address not available</em></p>
+        {% endif %}
 
         <!--search bar-->
         <div style="margin-top: 30px;">
