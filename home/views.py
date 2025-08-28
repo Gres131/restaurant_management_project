@@ -39,12 +39,14 @@ def homepage(request):
         
     
      context = {
+        "restaurant_info": restaurant_info,
         "restaurant_name": restaurant_display_name,
         "restaurant_phone": restaurant_display_phone,
         "opening_hours": opening_hours,
         "menu_items": menu_items, 
         "query": query,
-        "restaurant_location": restaurant_location,    
+        "restaurant_location": restaurant_location, 
+           
     }
     
     return render(request, 'home/homepage.html', context)
