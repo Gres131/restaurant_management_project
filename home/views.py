@@ -16,10 +16,10 @@ def homepage(request):
     opening_hours = "Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm"
 
     
-
+    # get query param
     query request.GET.get("q", "")
 
-
+    # correct filter syntax (double underscore)
     if query:
         menu_items = MenuItem.objects.filter(name_icontains=query)
     else:
