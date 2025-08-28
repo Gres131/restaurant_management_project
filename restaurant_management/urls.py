@@ -26,4 +26,5 @@ urlpatterns = [
     path("", include("home.urls")),
 ]
 
-if settings += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG
+    uripatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
