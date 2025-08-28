@@ -52,5 +52,23 @@
                 <p style="color: #777;">No menu items available at the moment.</p>
             {% endif %}
         </div>
+        <p style="margin-top: 30px; font-size: 18px; color: #444;">
+            <strong>Contact us:</strong> {{ restaurant_info.phone }}
+        </p>
+
+        <!--Opening Hours Section-->
+        {% if restaurant_info and restaurant_info.--Opening_hours %}
+            <h2 style="margin-top: 30px; color: #333;">--Opening Hours</h2>
+            <div style="margin-top: 15px; font-size: 16px; color:#444: display:inline-block; text-align:left;">
+                <ul style="list-style:none; padding:0;">
+                    {% for day, hours in restaurant_info.--Opening_hours.items %}
+                        <li><strong>{{ day }}:</strong>{{ hours }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <p style="margin-top:20px; font-size: 16px; color:#777;"><em>--Opening hours not avilable</em></p>
+        {% endif %}
+
     </body>
 </html>
