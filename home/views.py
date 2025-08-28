@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .models  import RestaurantInfo, RestaurantLocation,
+from .models  import RestaurantInfo, RestaurantLocation, MenuItem
 from products.models import Menu
 from .forms import ContactForm
-# import logging, requests
+import logging, requests
 
 
 logger = logging.getLogger(__name__)
@@ -12,7 +12,7 @@ def homepage(request):
     restaurant_display_name = getattr(settings, 'RESTAURANT_NAME', 'Our Restaurant')
     restaurant_display_phone = getattr(settings, 'RESTAURANT_PHONE', '000-000-0000')
     restaurant_info = RestaurantInfo.objects.first()
-
+    restaurant_location = RestaurantLocation.objects.first()
     opening_hours = "Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm"
 
     
@@ -26,7 +26,7 @@ def homepage(request):
         menu_items = MenuItem.objects.all()
 
         # fetch first restaurant location
-    restaurant_location = RestaurantLocation.objects.first()
+    # restaurant_location = RestaurantLocation.objects.first()
 
 
     # api_url = "http://localhost:8000/api/menu/"
