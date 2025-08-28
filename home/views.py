@@ -54,12 +54,21 @@ def homepage(request):
 #     location = RestaurantLocation.objects.all()
 #     return render(request, "home/restaurant_locations.html", {"locations": location})
       
-# def contact_us (request):
-#     if request.method == "POST":
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             returnredirect("contact_us")
-#     else:
-#         form = ContactForm()
-#         return render(request, "home/contact_us.html", {"form":form})
+def contact_us (request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact=form.save()
+            # Send email notification
+            subject = f"New Contact Form Submission from {contact.name}"
+            message = f"Message from {contact.name} ({contact.email}):\n\n{contact.message}"
+            from_email = setting.DEFAULT_FROM_EMAIL
+            recipient_list = [settings.RESTAURANT_EMAIL]
+
+            send_mail(subject, message, from_email, recipient_list) 
+            return redirect("contact_us")
+    else:
+        form = ContactForm()
+
+
+    return render(request, "home/contact_us.html", {"form":form})
