@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>About {{ restaurant_name }}</h1>
+
+    <section class="my-4">
+        <h2>Our History</h2>
+        <p>{{ history }}</p>
+    </section>
+
+    <section class="my-4">
+        <h2>Our Mission</h2>
+        <p>{{ mission }}</p>
+    </section>
+</div>
+{% endblock %}
