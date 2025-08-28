@@ -21,7 +21,7 @@ def homepage(request):
 
 
     if query:
-        menu_items = Menu.objects.filter(name_icontains=query)
+        menu_items = MenuItem.objects.filter(name_icontains=query)
     else:
         menu_items = MenuItem.objects.all()
     # api_url = "http://localhost:8000/api/menu/"
