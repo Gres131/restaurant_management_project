@@ -17,10 +17,10 @@ def homepage(request):
 
     
     # get query param
-    query request.GET.get("q", "")
+    search_query = request.GET.get("q", "")
 
     # correct filter syntax (double underscore)
-    if query:
+    if search_query:
         menu_items = MenuItem.objects.filter(name_icontains=query)
     else:
         menu_items = MenuItem.objects.all()
@@ -38,13 +38,13 @@ def homepage(request):
     #     logger.error(f"Error fetching menu data: {e}")
         
     
-     context = {
+     template_context = {
         "restaurant_info": restaurant_info,
         "restaurant_name": restaurant_display_name,
         "restaurant_phone": restaurant_display_phone,
         "opening_hours": opening_hours,
         "menu_items": menu_items, 
-        "query": query,
+        "search_query": search_query,
         "restaurant_location": restaurant_location, 
            
     }
