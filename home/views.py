@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .models  import RestaurantInfo, RestaurantLocation, MenuItem
+from .models  import RestaurantInfo, RestaurantLocation,
+from products.models import Menu
 from .forms import ContactForm
 import logging, requests
 
@@ -14,23 +15,26 @@ def homepage(request):
 
     opening_hours = "Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm"
 
-
-    
-    menu_items = MenuItem.objects.all()
-    api_url = "http://localhost:8000/api/menu/"
-    try:
-        response =requests.get(api_url, timeout=5)
-        if response.status_code ==  200:
-            menu_items = response.json()
-    except requests.exceptions.RequestEception as e:
-        logger.error(f"Error fetching menu data: {e}")
+    query request.GET.get("q", "")
+    if query:
+        menu_items = Menu.objects.filter(name_icontains=query)
+    else:
+        menu_items = MenuItem.objects.all()
+    # api_url = "http://localhost:8000/api/menu/"
+    # try:
+    #     response =requests.get(api_url, timeout=5)
+    #     if response.status_code ==  200:
+    #         menu_items = response.json()
+    # except requests.exceptions.RequestEception as e:
+    #     logger.error(f"Error fetching menu data: {e}")
         
     
      context = {
         "restaurant_name": restaurant_display_name,
         "restaurant_phone": restaurant_display_phone,
         "opening_hours": opening_hours,
-        "menu_items": menu_items,     
+        "menu_items": menu_items, 
+        "query": query    
     }
     
     return render(request, 'home/homepage.html', context)
