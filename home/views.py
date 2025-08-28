@@ -3,7 +3,7 @@ from django.conf import settings
 from .models  import RestaurantInfo, RestaurantLocation,
 from products.models import Menu
 from .forms import ContactForm
-import logging, requests
+# import logging, requests
 
 
 logger = logging.getLogger(__name__)
@@ -15,7 +15,11 @@ def homepage(request):
 
     opening_hours = "Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm"
 
+    
+
     query request.GET.get("q", "")
+
+
     if query:
         menu_items = Menu.objects.filter(name_icontains=query)
     else:
