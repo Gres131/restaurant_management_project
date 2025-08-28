@@ -24,6 +24,11 @@ def homepage(request):
         menu_items = MenuItem.objects.filter(name_icontains=query)
     else:
         menu_items = MenuItem.objects.all()
+
+        # fetch first restaurant location
+    restaurant_location = RestaurantLocation.objects.first()
+
+
     # api_url = "http://localhost:8000/api/menu/"
     # try:
     #     response =requests.get(api_url, timeout=5)
@@ -38,22 +43,23 @@ def homepage(request):
         "restaurant_phone": restaurant_display_phone,
         "opening_hours": opening_hours,
         "menu_items": menu_items, 
-        "query": query    
+        "query": query,
+        "restaurant_location": restaurant_location,    
     }
     
     return render(request, 'home/homepage.html', context)
 
 
- def restaurant_locations(request):
-    location = RestaurantLocation.objects.all()
-    return render(request, "home/restaurant_locations.html", {"locations": location})
+#  def restaurant_locations(request):
+#     location = RestaurantLocation.objects.all()
+#     return render(request, "home/restaurant_locations.html", {"locations": location})
       
-def contact_us (request):
-    if request.method == "POST":
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            returnredirect("contact_us")
-    else:
-        form = ContactForm()
-        return render(request, "home/contact_us.html", {"form":form})
+# def contact_us (request):
+#     if request.method == "POST":
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             returnredirect("contact_us")
+#     else:
+#         form = ContactForm()
+#         return render(request, "home/contact_us.html", {"form":form})
