@@ -40,8 +40,8 @@ def homepage(request):
     
      template_context = {
         "restaurant_info": restaurant_info,
-        "restaurant_name": restaurant_display_name,
-        "restaurant_phone": restaurant_display_phone,
+        "restaurant_name": restaurant_info.name if restaurant_info else "Our Restaurant",    
+        "restaurant_phone": restaurant_info.phone if rest  else "000-000-000",
         "opening_hours": opening_hours,
         "menu_items": menu_items, 
         "search_query": search_query,
