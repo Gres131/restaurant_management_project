@@ -38,7 +38,7 @@ def homepage(request):
     #     logger.error(f"Error fetching menu data: {e}")
         
     
-     template_context = {
+    context = {
         "restaurant_info": restaurant_info,
         "restaurant_name": restaurant_info.name if restaurant_info else "Our Restaurant",    
         "restaurant_phone": restaurant_info.phone if rest  else "000-000-000",
