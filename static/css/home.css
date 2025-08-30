@@ -110,3 +110,15 @@ body {
 .search-button:hover {
     background-color: #219150;
 }
+
+.restaurant-logo-container{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.restaurant-logo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
