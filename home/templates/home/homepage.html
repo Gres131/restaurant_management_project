@@ -8,9 +8,10 @@
     <body style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 40px; text-align: center;">
         {% if restaurant_info and restaurant_info.logo %}
             <div class="restaurant-logo-container">
-                <img src="{{ restaurant_info.logo.https://img.freepik.com/vektoren-kostenlos/gradient-logo-design-fuer-restaurant_23-2151257068.jpg?semt=ais_hybrid&w }}"
+                <img src="{{ restaurant_info.logo.url}}"
                  alt="{{ restaurant_info.name }} Logo" 
-                 class="restaurant-logo">
+                 class="restaurant-logo"
+                 />
             </div>
         {% endif %}
 
