@@ -7,7 +7,9 @@
     <body style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 40px; text-align: center;">
         {% if restaurant_info and restaurant_info.logo %}
             <div style="margin-bottom: 20px;">
-                <img src="{{ restaurant_info.logo.https://img.freepik.com/vektoren-kostenlos/gradient-logo-design-fuer-restaurant_23-2151257068.jpg?semt=ais_hybrid&w }}" alt="{{ restaurant_info.name }} Logo" style="max-width: 200px; height: auto; border-radius: 10px;">
+                <img src="{{ restaurant_info.logo.https://img.freepik.com/vektoren-kostenlos/gradient-logo-design-fuer-restaurant_23-2151257068.jpg?semt=ais_hybrid&w }}"
+                 alt="{{ restaurant_info.name }} Logo" 
+                 class="restaurant-logo">
             </div>
         {% endif %}
 
