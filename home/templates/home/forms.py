@@ -16,10 +16,15 @@ class FeedbackForm(forms.ModelForm):
         }
 
 class ContactForm(forms.ModelForm):
-    message = forms.CharField(
-        widget=forms.Textarea(attrs={"rows":4, "placeholder": "your message..."}),
+    email = forms.EmailField(
         required=True
+        widget=forms.EmailInput(attrs={"placeholder": "Your Email"})
+    )
+    message = forms.CharField(
+        required=True
+        widget=forms.Textarea(attrs={"rows":4, "placeholder": "your message..."}),
+       
     )
     class Meta:
         model = Contact
-        fields = ['name', 'email']
+        fields = ['name', 'email', 'message']
