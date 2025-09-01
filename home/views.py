@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
+from django.core.mail import send_mail
 from .models  import RestaurantInfo, RestaurantLocation, MenuItem
 from products.models import Menu
 from .forms import ContactForm
