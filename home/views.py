@@ -25,6 +25,11 @@ def homepage(request):
         menu_items = MenuItem.objects.filter(name_icontains=query)
     else:
         menu_items = MenuItem.objects.all()
+    
+
+    # Cart count from session
+    cart = request.session.get('cart', {})
+    cart_count = sum(cart.values())
 
         # fetch first restaurant location
     # restaurant_location = RestaurantLocation.objects.first()
@@ -46,7 +51,8 @@ def homepage(request):
         "opening_hours": opening_hours,
         "menu_items": menu_items, 
         "search_query": search_query,
-        "restaurant_location": restaurant_location, 
+        "restaurant_location": restaurant_location,
+        "cart_count": cart_count, 
            
     }
     
@@ -56,6 +62,16 @@ def homepage(request):
 #  def restaurant_locations(request):
 #     location = RestaurantLocation.objects.all()
 #     return render(request, "home/restaurant_locations.html", {"locations": location})
+
+def add_to_cart(request, item_id):
+    """Add item to shopping cart (stored in session)"""
+    item = get_object_or_404(MenuItem, id=item_id)
+    cart = request.session.get('cart', {})
+
+    cart[str(item_id)] = cart.get(str(item_id), 0) + 1
+    request.session['cart'] = cart
+
+    return redirect("homepage")
       
 def contact_us (request):
     if request.method == "POST":
