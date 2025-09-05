@@ -18,4 +18,5 @@ path('feedback/', views.feedback, name='feedback')
 path('api/menu/', menu_view, name='menu_api'),
 path("locations/", views.restaurant_locations, name="restaurant_locations"),
 path("about/", views.about,name="about"),
+path("add-to-cart/<int:item_id>/", views.add_to_cart, name="add_to_cart"),
 ]
