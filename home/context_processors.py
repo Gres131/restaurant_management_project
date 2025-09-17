@@ -8,4 +8,5 @@ def footer_context(request):
         "restaurant_address": getattr(settings, "RESTAURANT_ADDDRESS", ""),
         "restaurant_email": getattr(settings, "RESTAURANT_EMAIL", ""),
         "current_year": now().year,
+        "current_time": now(),
     }
