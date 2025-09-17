@@ -86,5 +86,16 @@
                 <em>Phone number not available</em>
             </p>
         {% endif %}
+
+
+        <!-- Footer -->
+        <footer class="restaurant-footer">
+            <p>&copy; {{ current_year }} {{ restaurant_name }} . All rights reserved.</p>
+            {% if restaurant_info and restaurant_info.opening_hours %}
+                <span class="footer-hours">
+                    open Today: {{ restaurant_info.opening_hours }}
+                </span>
+            {% endif %}
+        </footer>
     </body>
 </html>
