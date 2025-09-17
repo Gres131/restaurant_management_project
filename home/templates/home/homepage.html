@@ -81,12 +81,15 @@
         {% endif %}
 
         <!--Phone Number Section-->
-        {% if restaurant_info %}
+        {% if restaurant_info and restaurant_info.phone %}
+            <p style="margin-top: 30px; font-size: 20px; color: #222; font-weight: bold;">
+                Call Us: <span style="color: #27ae60;">{{ restaurant_info.phone }}</span>
+            </p>
+        {% else %}
             <p style="margin-top: 30px; font-size: 18px; color: #777;">
                 <em>Phone number not available</em>
             </p>
         {% endif %}
-
 
         <!-- Footer -->
         <footer class="restaurant-footer">
