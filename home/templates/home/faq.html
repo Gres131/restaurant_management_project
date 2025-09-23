@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+        <h3>Q1: What are your restaurant opening hours?</h3>
+        <p>A: We are open daily from 10:00 AM to 11:00 PM.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Q2: Do you offer home delivery?</h3>
+        <p>A: Yes, we offer home delivery within a 5km radius.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Q3: Do you provide vegetarian and vegan options?</h3>
+        <p>A: Absolutely, we have a wide range of vegetarian and vegan dishes.</p>
+    </div>
+
+     <div class="faq-item">
+        <h3>Q4: How can I make a reservation?</h3>
+        <p>A: you can make a reservation through our <a href="{% url 'reservations' %}">reservation page</a>.</p>
+     </div>
+{% endblock %}
