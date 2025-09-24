@@ -91,3 +91,7 @@ def contact_us (request):
 
 
     return render(request, "home/contact_us.html", {"form":form})
+
+def faq_view(request):
+    """Render FAQ Page"""
+    return render(request, "home/faq.html")
