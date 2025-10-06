@@ -5,6 +5,7 @@ from django.conf.urls import handler404
 from . import views
 from .views import feedback_view
 from .views import menu_view
+from .view import MenuCategoryListView
 
 handler404 = 'home.views.custom_404_view'
 
@@ -19,4 +20,5 @@ path('api/menu/', menu_view, name='menu_api'),
 path("locations/", views.restaurant_locations, name="restaurant_locations"),
 path("about/", views.about,name="about"),
 path("add-to-cart/<int:item_id>/", views.add_to_cart, name="add_to_cart"),
+path('api/categories/', MenuCategoryListView.as_view(), name='menu-category-list'),
 ]
