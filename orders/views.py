@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from orders.utils import generate_coupon_code
-from orders.models import generate_coupon_code
+from .models import Coupon
 
 def create_new_coupon():
     code = generate_coupon_code(12)
