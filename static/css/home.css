@@ -153,3 +153,23 @@ body {
     color: #555;
     margin: 0;
 }
+
+.breadcrumbs{
+    margin: 15px 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.breadcrumbs a{
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumbs a:hover{
+    text-decoration: underline;
+}
+
+.breadcrumbs span{
+    color: #222;
+    font-weight: 500;
+}
