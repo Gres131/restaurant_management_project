@@ -29,6 +29,7 @@
     </head>
     <body>
         <section class="welcome-section">
+            {% include 'include/breadcrumbs.html' with breadcrumbs = [{'title': 'Home'}] %}
             <h1>Welcome to Our Restaurant</h1>
             <p>Where Flavor Meets Comfort!</p>
     </body>
