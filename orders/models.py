@@ -9,6 +9,10 @@ class OrderStatus(models.Model):
         return self.name
 # Create your models here.
 class Order(models.Model):
+    customer_name = models.CharField(max_length = 100)
+    order_date = models.DateTimeField(auto_now_add = True)
+
+
     STATUS_CHOICES = [
         ('PENDING', 'Pending'),
         ('PROCESSING', 'Processing'),
@@ -58,9 +62,9 @@ class Order(models.Model):
         verbose_name="Updated At",
         help_text="When the order was last updated"
     )
-
+    status = models.ForeignKey(OrderStatus,on_delete = models.SET_NULL, null = True)
     class Meta:
         ordering =['-created_at']
     
     def __str__(self):
-        return f"Order #{self.id} - {self.customer} - {self.status}"
+        return f"Order #{self.id} - {self.customer_name}"
