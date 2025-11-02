@@ -2,7 +2,11 @@ from django.db import models
 from django.conf import settings
 from django.core.validators import MinValueValidator
 from products.models import Menu
+class OrderStatus(models.Model):
+    name = models.CharField(max_length=50,unique = True)
 
+    def __str__(self):
+        return self.name
 # Create your models here.
 class Order(models.Model):
     STATUS_CHOICES = [
